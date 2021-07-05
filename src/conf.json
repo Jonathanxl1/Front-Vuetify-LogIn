@@ -1,0 +1,15 @@
+{
+    "plugins": [
+        "node_modules/jsdoc-vuejs"
+      ],
+    "source": {
+    "include": [
+      "src/",
+      "src/components/",
+      "src/api.js",
+      "src/SignIn.js",
+      "README.md"
+    ],
+    "includePattern": "\\.(vue|js)$",
+    "sourceType": "module"
+  }}
