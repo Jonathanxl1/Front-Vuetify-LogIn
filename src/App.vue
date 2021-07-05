@@ -43,7 +43,21 @@
 <script>
 import SignIn from "./components/SignIn";
 import TableData from "./components/TableData.vue";
-
+/**
+ * @module App
+ * Interfaz con login y tabla de datos
+ * @author Jonathan Aguasaco <jonathanxl1@hotmail.com>
+ * @version 1.5
+ * @requires SigIn.vue
+ * @requires TableData.vue
+ * @vue-data {Boolean} SignIn - Login status
+ * @vue-data {Boolean} overlay - Overlay status
+ * @vue-data {Boolean} failedLogin - Failed Login status
+ * @vue-event {(Boolean|callback)} status - Session State Role
+ * @vue-event {Boolean} failedSession - Session State FailedLogin
+ * @vue-event {Boolean} overlay - Change State overlay loading
+ * @vue-event {Boolean} failedLogin - Change State FailedLogin Alert
+ */
 export default {
   name: "App",
 
@@ -71,12 +85,20 @@ export default {
     },
   },
   watch: {
+    /**
+     * Watcher overlay
+     * @param {Boolean} val - state of overlay
+     */
     overlay(val) {
       val &&
         setTimeout(() => {
           this.overlay = false;
         }, 1500);
     },
+    /**
+     * Watcher failedLogin
+     * @param {Boolean} val - state of failedLogin
+     */
     failedLogin(val) {
       val &&
         setTimeout(() => {

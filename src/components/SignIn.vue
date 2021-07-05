@@ -68,7 +68,23 @@
 
 <script>
 import Session from "../SignIn";
-
+/**
+ * @module SignIn
+ * Componente de Login registro o redes sociales
+ * @vue-data {Boolen} SigIn - State visual
+ * @vue-data {Boolean} valid - State form
+ * @vue-data {Boolean} show - Show/Hide Password
+ * @vue-data {Boolean} invalid - State invalid form
+ * @vue-data {String} email - Email User
+ * @vue-data {String} password - Password User
+ * @vue-data {Object} rules -  Rules for form
+ * @vue-data {Boolean} remember - Checkbox save data form
+ * @vue-event {Callback|Function} Enviar - Submit form
+ * @vue-event {callBack} FailedLogin - Failed login state
+ * @requires SignIn.js
+ *
+ *
+ */
 export default {
   name: "SignIn",
   data() {
@@ -83,11 +99,13 @@ export default {
         email: [(v) => /.+@.+/.test(v) || "E-mail must be valid"],
         password: [(v) => v.length >= 8 || "Password at least 8 characters"],
       },
-      expand: false,
       remember: false,
     };
   },
   methods: {
+    /**
+     * Function Submit Form to SignIn
+     */
     Enviar() {
       Session.Validate(this.email, this.password)
         .then((status) => {
@@ -99,10 +117,13 @@ export default {
           this.$emit("State", status);
         })
         .catch((status) => {
-             this.$emit("State", status);
-             this.FailedLogin();
+          this.$emit("State", status);
+          this.FailedLogin();
         });
     },
+    /**
+     * Function failedLogin state
+     */
     FailedLogin() {
       this.$emit("FailedLogin", true);
     },
