@@ -70,7 +70,7 @@
 import Session from "../SignIn";
 /**
  * @module SignIn
- * Componente de Login registro o redes sociales
+ * @desc Componente de Login registro o redes sociales
  * @vue-data {Boolen} SigIn - State visual
  * @vue-data {Boolean} valid - State form
  * @vue-data {Boolean} show - Show/Hide Password

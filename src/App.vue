@@ -45,7 +45,7 @@ import SignIn from "./components/SignIn";
 import TableData from "./components/TableData.vue";
 /**
  * @module App
- * Interfaz con login y tabla de datos
+ * @desc Interfaz con login y tabla de datos
  * @author Jonathan Aguasaco <jonathanxl1@hotmail.com>
  * @version 1.5
  * @requires SigIn.vue
@@ -72,6 +72,10 @@ export default {
     failedLogin: false,
   }),
   methods: {
+    /**
+     * Status change
+     * @param {Boolean} value - Received status of SignIn Component
+     */
     status(value) {
       if (value) {
         this.overlay = true;
@@ -80,6 +84,10 @@ export default {
         this.failedSession(!value);
       }
     },
+    /**
+     * Status alert failed Login
+     * @param {Boolean} value - Received status of SignIn Component
+     */
     failedSession(value) {
       this.failedLogin = value;
     },

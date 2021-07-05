@@ -14,7 +14,7 @@
 import api from "../api.js";
 /**
  * @module TableData
- * Componente de Tabla de usuarios
+ * @desc Componente de Tabla de usuarios
  * @vue-data {Object} headers - Headers for table
  * @vue-data {Object} users - Users receiveid from api
  * @vue-data {Boolean} SignIn - Show/Hide Components
